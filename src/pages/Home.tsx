@@ -37,8 +37,8 @@ const Home = () => {
             <span className="section-number">1.</span>
             <h2 className="text-2xl font-heading font-semibold">Abstract</h2>
           </div>
-          <Card className="shadow-card">
-            <CardContent className="pt-6">
+        <Card className="shadow-card">
+            <CardContent className="pt-6 space-y-4">
               <p className="text-muted-foreground leading-relaxed">
                 The Yogi Application demonstrates the application of the Ethics Filter Framework (EFF) 
                 to integrate Value-Based Engineering into agile requirements. Two versions of a yoga 
@@ -47,6 +47,27 @@ const Home = () => {
                 (Ethical Enhancement)</strong> integrates ethical values through harm clauses and 
                 ethical acceptance criteria.
               </p>
+              <div className="border-t border-border pt-4">
+                <p className="font-medium text-foreground text-sm mb-2">Implemented Features:</p>
+                <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span><strong>Yoga-Themed Questionnaire</strong> — Collects user preferences for personalized recommendations</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span><strong>Class Recommendations</strong> — Suggests suitable yoga classes based on questionnaire responses</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span><strong>AI-Generated Pro-Tips</strong> — Provides personalized practice advice to enhance the user's routine</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span><strong>Newsletter Subscription</strong> — Offers optional studio updates and event notifications</span>
+                  </li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
         </section>
