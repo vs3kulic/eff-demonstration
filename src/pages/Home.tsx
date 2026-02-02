@@ -92,8 +92,8 @@ const Home = () => {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="font-semibold">Feature</TableHead>
-                      <TableHead className="font-semibold">Version 1 (Baseline)</TableHead>
-                      <TableHead className="font-semibold">Version 2 (Ethical Enhancement)</TableHead>
+                      <TableHead className="font-semibold">Version 1</TableHead>
+                      <TableHead className="font-semibold">Version 2</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
