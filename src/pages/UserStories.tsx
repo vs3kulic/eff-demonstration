@@ -1,7 +1,7 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, BookOpen, FileText } from "lucide-react";
+import { ArrowLeft, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { EthicsLabel, type EthicsValue } from "@/components/EthicsLabel";
 
@@ -90,39 +90,64 @@ const v2Stories: UserStory[] = [
   },
 ];
 
-const UserStoryCard = ({ story, version }: { story: UserStory; version: "v1" | "v2" }) => (
-  <Card className={version === "v2" ? "border-accent/30" : ""}>
-    <CardHeader className="pb-3">
-      <div className="flex items-center gap-2 mb-1">
-        <span className="font-mono text-sm text-muted-foreground">{story.id}</span>
-      </div>
-      <CardTitle className="text-lg font-heading">{story.title}</CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-4">
-      <blockquote className="border-l-2 border-primary/30 pl-4 italic text-muted-foreground">
-        "{story.story}
-        {story.harmClause && (
-          <span className="text-accent font-medium not-italic"> {story.harmClause}</span>
-        )}
-        "
-      </blockquote>
+const UserStoryCard = ({ story, version }: { story: UserStory; version: "v1" | "v2" }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const hasAcceptanceCriteria = story.acceptanceCriteria && story.acceptanceCriteria.length > 0;
 
-      {story.acceptanceCriteria && story.acceptanceCriteria.length > 0 && (
-        <div className="space-y-3">
-          <p className="font-medium text-sm">Acceptance Criteria:</p>
-          <ul className="space-y-2">
-            {story.acceptanceCriteria.map((criterion, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <EthicsLabel value={criterion.ethicsValue} className="mt-0.5 shrink-0" />
-                <span>{criterion.text}</span>
-              </li>
-            ))}
-          </ul>
+  return (
+    <Card className={version === "v2" ? "border-accent/30" : ""}>
+      <CardHeader className="pb-3">
+        <div className="flex items-center gap-2 mb-1">
+          <span className="font-mono text-sm text-muted-foreground">{story.id}</span>
         </div>
-      )}
-    </CardContent>
-  </Card>
-);
+        <CardTitle className="text-lg font-heading">{story.title}</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <blockquote className="border-l-2 border-primary/30 pl-4 italic text-muted-foreground">
+          "{story.story}
+          {story.harmClause && (
+            <span className="text-accent font-medium not-italic"> {story.harmClause}</span>
+          )}
+          "
+        </blockquote>
+
+        {hasAcceptanceCriteria && (
+          <div className="space-y-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-muted-foreground hover:text-foreground p-0 h-auto font-medium"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp className="h-4 w-4 mr-1" />
+                  Hide Acceptance Criteria
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="h-4 w-4 mr-1" />
+                  Show Acceptance Criteria ({story.acceptanceCriteria!.length})
+                </>
+              )}
+            </Button>
+
+            {isExpanded && (
+              <ul className="space-y-2 pt-2">
+                {story.acceptanceCriteria!.map((criterion, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <EthicsLabel value={criterion.ethicsValue} className="mt-0.5 shrink-0" />
+                    <span>{criterion.text}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
 
 const UserStories = () => {
   const navigate = useNavigate();
