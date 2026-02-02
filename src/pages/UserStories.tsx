@@ -155,41 +155,37 @@ const UserStories = () => {
       </header>
 
       <main className="container mx-auto px-4 py-12">
-        {/* V1 Stories */}
-        <section className="mb-12">
-          <div className="flex items-baseline gap-2 mb-6">
-            <span className="section-number">A.1</span>
-            <h2 className="text-2xl font-heading font-semibold">User Stories v1 (Baseline)</h2>
+        {/* Column Headers */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <div>
+            <div className="flex items-baseline gap-2 mb-2">
+              <span className="section-number">A.1</span>
+              <h2 className="text-2xl font-heading font-semibold">User Stories v1 (Baseline)</h2>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              Standard functional requirements without explicit ethical analysis.
+            </p>
           </div>
-          <p className="text-muted-foreground mb-6">
-            These stories were implemented as a baseline version (v1) of the Yogi web application.
-            They represent standard functional requirements without explicit ethical analysis.
-          </p>
-          <div className="grid gap-4">
-            {v1Stories.map((story) => (
-              <UserStoryCard key={story.id} story={story} version="v1" />
-            ))}
+          <div>
+            <div className="flex items-baseline gap-2 mb-2">
+              <span className="section-number">A.2</span>
+              <h2 className="text-2xl font-heading font-semibold">User Stories v2 (Ethical Enhancement)</h2>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              Extended with harm clauses and ethical acceptance criteria.
+            </p>
           </div>
-        </section>
+        </div>
 
-        <Separator className="my-8" />
-
-        {/* V2 Stories */}
-        <section>
-          <div className="flex items-baseline gap-2 mb-6">
-            <span className="section-number">A.2</span>
-            <h2 className="text-2xl font-heading font-semibold">User Stories v2 (Ethical Enhancement)</h2>
-          </div>
-          <p className="text-muted-foreground mb-6">
-            These stories extend the baseline with explicit harm clauses and ethical acceptance criteria,
-            implementing the Ethics Filter Framework for value-based engineering.
-          </p>
-          <div className="grid gap-4">
-            {v2Stories.map((story) => (
-              <UserStoryCard key={story.id} story={story} version="v2" />
-            ))}
-          </div>
-        </section>
+        {/* Side by Side Stories */}
+        <div className="space-y-6">
+          {v1Stories.map((v1Story, index) => (
+            <div key={v1Story.id} className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <UserStoryCard story={v1Story} version="v1" />
+              <UserStoryCard story={v2Stories[index]} version="v2" />
+            </div>
+          ))}
+        </div>
       </main>
 
       {/* Footer */}
