@@ -206,12 +206,6 @@ const ResultsV1 = () => {
             </CardContent>
           </Card>
 
-          {/* Actions */}
-          <div className="flex gap-3">
-            <Button onClick={() => navigate("/questionnaire/v1")} variant="outline" size="sm" className="flex-1">
-              Retake Questionnaire
-            </Button>
-          </div>
         </div>
       </div>
     </div>
