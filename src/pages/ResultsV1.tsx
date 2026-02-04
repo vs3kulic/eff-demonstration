@@ -197,7 +197,7 @@ const ResultsV1 = () => {
           <Card className="shadow-card border-primary/30 bg-primary/5">
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
-                Ready for the next step? Continue to Yogi v2 to complete the walkthrough.
+                Before moving on, please go to the Questionnaire and respond to the questions related to Yogi v1.
               </p>
               <Button onClick={() => navigate("/questionnaire/v2")} size="lg" className="w-full">
                 Continue to Yogi v2
