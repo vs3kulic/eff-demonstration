@@ -174,9 +174,8 @@ const Home = () => {
                 <ArrowRight className="h-8 w-8 text-primary shrink-0 mt-1" />
                 <div className="flex-1">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    You will first experience the baseline version (Yogi v1), then continue to the 
-                    EFF-enhanced version (Yogi v2). This guided walkthrough helps you compare both 
-                    approaches in sequence.
+                    You will first experience Yogi v1, then continue to Yogi v2. This guided 
+                    walkthrough helps you compare both approaches in sequence.
                   </p>
                   <Button 
                     onClick={() => navigate('/questionnaire/v1')}
