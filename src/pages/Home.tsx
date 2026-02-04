@@ -131,41 +131,10 @@ const Home = () => {
 
         <Separator className="my-8" />
 
-        {/* User Stories Section */}
-        <section className="mb-12">
-          <div className="flex items-baseline gap-2 mb-4">
-            <span className="section-number">3.</span>
-            <h2 className="text-2xl font-heading font-semibold">User Stories</h2>
-          </div>
-          <Card className="shadow-card">
-            <CardContent className="pt-6">
-              <div className="flex items-start gap-4">
-                <BookOpen className="h-8 w-8 text-primary shrink-0 mt-1" />
-                <div className="flex-1">
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    View the complete user story repository documenting the functional and ethical 
-                    requirements for both versions. Includes harm clauses and acceptance criteria 
-                    for the Ethics Filter Framework implementation.
-                  </p>
-                  <Button 
-                    variant="outline"
-                    onClick={() => navigate('/user-stories')}
-                  >
-                    <BookOpen className="h-4 w-4 mr-2" />
-                    View User Stories (Appendix A)
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        <Separator className="my-8" />
-
         {/* Start Walkthrough Section */}
         <section className="mb-12">
           <div className="flex items-baseline gap-2 mb-4">
-            <span className="section-number">4.</span>
+            <span className="section-number">3.</span>
             <h2 className="text-2xl font-heading font-semibold">Yogi Application Walkthrough</h2>
           </div>
           <Card className="shadow-card">
@@ -186,6 +155,37 @@ const Home = () => {
                   <p className="text-sm text-muted-foreground mt-4 italic">
                     You will see Yogi v2 after completing this version.
                   </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <Separator className="my-8" />
+
+        {/* User Stories Section */}
+        <section className="mb-12">
+          <div className="flex items-baseline gap-2 mb-4">
+            <span className="section-number">4.</span>
+            <h2 className="text-2xl font-heading font-semibold">User Stories</h2>
+          </div>
+          <Card className="shadow-card">
+            <CardContent className="pt-6">
+              <div className="flex items-start gap-4">
+                <BookOpen className="h-8 w-8 text-primary shrink-0 mt-1" />
+                <div className="flex-1">
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    View the complete user story repository documenting the functional and ethical 
+                    requirements for both versions. Includes harm clauses and acceptance criteria 
+                    for the Ethics Filter Framework implementation.
+                  </p>
+                  <Button 
+                    variant="outline"
+                    onClick={() => navigate('/user-stories')}
+                  >
+                    <BookOpen className="h-4 w-4 mr-2" />
+                    View User Stories (Appendix A)
+                  </Button>
                 </div>
               </div>
             </CardContent>
