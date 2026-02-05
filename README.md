@@ -11,7 +11,7 @@ Yogi is a small, self‑contained demo that shows how conventional agile user st
 
 The live instance used in the study is available at:
 
-> https://eff-yogi.lovable.app/
+> https://eff-demo.lovable.app/
 
 ---
 
@@ -71,8 +71,8 @@ No backend services are required for running the demo locally; all logic is clie
 
 ```bash
 # Clone the repository
-git clone <REPO_URL>
-cd <REPO_FOLDER>
+git clone https://github.com/vs3kulic/eff-demo
+cd eff-demo
 
 # Install dependencies
 npm install
